@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- 背景图层：ImageView -->
+    <ImageView
+        android:id="@+id/bgImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="TODO"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/login3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- TODO 屏幕顶部 55% 的 Guideline 实现屏幕百分比布局-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <!-- 主要内容布局，从 40% 位置到底部 -->
+    <!-- TODO 透明颜色 android:background="#80000000"-->
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="328dp"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_40">
+
+        <!-- 🟦 上半部分区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <!-- 左侧卡片 -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="1dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#393b3a"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                tools:ignore="NestedWeights">
+
+                <Button
+                    android:id="@+id/btnzz"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn_zz"
+                    android:text="赞助"
+                    android:textColor="#333333"
+                    android:textSize="70dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- 右侧卡片区（2行2列） -->
+            <GridLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:columnCount="2"
+                android:rowCount="2">
+
+                <!-- 四个小卡片 -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    app:cardBackgroundColor="#393b3a"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp">
+
+                    <Button
+                        android:id="@+id/btnShelf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/btn_sj"
+                        android:text="我的书架" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    app:cardBackgroundColor="#393b3a"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp">
+
+                    <Button
+                        android:id="@+id/btnReadAsset"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/btn_xiaoshuo"
+                        android:text="阅读内置小说" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    app:cardBackgroundColor="#393b3a"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp">
+
+                    <Button
+                        android:id="@+id/btnSelectFile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/btn_xaunzexiaoshuo"
+                        android:text="选择TXT小说" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    app:cardBackgroundColor="#393b3a"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="1dp">
+
+                    <Button
+                        android:id="@+id/btnHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/btn_tuichu"
+                        android:text="退出" />
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+        </LinearLayout>
+
+
+        <!-- 🟥 下半部分区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UselessParent">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="2dp"
+                    app:cardBackgroundColor="#2A3440"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp">
+
+                    <com.example.zxldemo.MarqueeTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ellipsize="marquee"
+                        android:gravity="center"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:padding="16dp"
+                        android:singleLine="true"
+                        android:text="📖 这是一款专注于本地TXT小说阅读的应用，无广告、不联网，保护您的阅读隐私。软件完全免费，如果您喜欢它的简洁设计和阅读体验，欢迎点击上方按钮赞助我一杯咖啡，您的支持是我持续开发的动力！项目开源地址：https://github.com/changmen1"
+                        android:textColor="#E0E0E0"
+                        android:textSize="20sp"
+                        tools:ignore="MissingClass" />
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
