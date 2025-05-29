@@ -18,7 +18,7 @@
 ## **界面预览**
 ![主界面](readme/home.jpg)
 ![书架](readme/bookshelf.jpg)
-![主界面](readme/book.jpg)
+![主界面](readme/yellowBook.jpg)
 
 ## **技术特性**
 - **基于Android原生开发**：稳定性高。
